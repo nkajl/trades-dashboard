@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trades</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://assets.erply.com/bo-prototype/_style.css">
+</head>
+
+<body>
+  <div class="trades-menu-container">
+    <div class="trades-menu-content">
+      <div class="title">
+        <p>Trades</p>
+      </div>
+      <div>
+        <button class="export-button">
+          <i class="icon-Arrow-Up"></i>
+          <span>Export</span>
+          </button>
+        <button class="add-new-button">
+          <i class="icon-Plus"></i>
+          <span>New</span>
+        </button>
+        <button class="filter-button">
+          <i class="icon-Filter-On"></i>
+        </button>
+        <button class="options-button">
+          <i class="icon-More-Vertical"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <main class="main">
+    <div class="content">
+      <section class="trades-table-container">
+        <form method="get" id="trades-table-pagination" class="pagination">
+            <div class="select-container results-per-page">
+                <p>Results per page</p>
+                <select class="select" name="records-on-page">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div class="page-switcher">
+                <button
+                    class="button--small button-prev icon-Chevron-Left-Small"
+                    id="previous-button"
+                ></button>
+                    <p>1</p>
+                <button
+                    class="button--small button-next icon-Chevron-Right-Small"
+                    id="next-button"
+                ></button>
+            </div>
+            <div class="select-container select-page">
+                <p>Page</p>
+                <select class="select" name="select-page">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </form>
+            <table class="table" id="table">
+                <thead>
+                    <tr class="trades-table-header">
+                        <th class="header-checkbox">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" class="th-checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Location</th>
+                        <th>State</th>
+                        <th class="table-th-total">Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-table">
+                        <td class="table-td-checkbox">
+                            <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+                        </td>
+                        <td data-title="Type" class="table-td-type">                                                      
+                            <p>TRADE TYPE</p>                            
+                            <p>#CODE</p>
+                        </td>
+                        <td data-title="Date" class="table-td-date">DATE</td>
+                        <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+                        <td data-title="Location" class="table-td-location">LOCATION</td>
+                        <td data-title="State" class="table-td-state">
+                            <p class="table-paragraph-state">
+                                <i class="icon-Progress-Focused"></i>
+                                STATE
+                            </p>
+                        </td>
+                        
+                        <td data-title="Total" class="table-td-total">
+                            <p>TOTAL €</p>
+                            <p class="table-paragraph-total-unpaid">PAID €</p>
+                        </td>
+                        <td data-title="" class="table-td-more">
+                            <i class="icon-More-Vertical"></i>
+                        </td>
+                    </tr>
+                    <tr class="row-table">
+                      <td class="table-td-checkbox">
+                          <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+                      </td>
+                      <td data-title="Type" class="table-td-type">                                                      
+                          <p>TRADE TYPE</p>                            
+                          <p>#CODE</p>
+                      </td>
+                      <td data-title="Date" class="table-td-date">DATE</td>
+                      <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+                      <td data-title="Location" class="table-td-location">LOCATION</td>
+                      <td data-title="State" class="table-td-state">
+                          <p class="table-paragraph-state">
+                              <i class="icon-Progress-Focused"></i>
+                              STATE
+                          </p>
+                      </td>
+                      
+                      <td data-title="Total" class="table-td-total">
+                          <p>TOTAL €</p>
+                          <p class="table-paragraph-total-unpaid">PAID €</p>
+                      </td>
+                      <td data-title="" class="table-td-more">
+                          <i class="icon-More-Vertical"></i>
+                      </td>
+                  </tr>
+                  <tr class="row-table">
+                    <td class="table-td-checkbox">
+                        <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+                    </td>
+                    <td data-title="Type" class="table-td-type">                                                      
+                        <p>TRADE TYPE</p>                            
+                        <p>#CODE</p>
+                    </td>
+                    <td data-title="Date" class="table-td-date">DATE</td>
+                    <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+                    <td data-title="Location" class="table-td-location">LOCATION</td>
+                    <td data-title="State" class="table-td-state">
+                        <p class="table-paragraph-state">
+                            <i class="icon-Progress-Focused"></i>
+                            STATE
+                        </p>
+                    </td>
+                    
+                    <td data-title="Total" class="table-td-total">
+                        <p>TOTAL €</p>
+                        <p class="table-paragraph-total-unpaid">PAID €</p>
+                    </td>
+                    <td data-title="" class="table-td-more">
+                        <i class="icon-More-Vertical"></i>
+                    </td>
+                </tr>
+                <tr class="row-table">
+                  <td class="table-td-checkbox">
+                      <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+                  </td>
+                  <td data-title="Type" class="table-td-type">                                                      
+                      <p>TRADE TYPE</p>                            
+                      <p>#CODE</p>
+                  </td>
+                  <td data-title="Date" class="table-td-date">DATE</td>
+                  <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+                  <td data-title="Location" class="table-td-location">LOCATION</td>
+                  <td data-title="State" class="table-td-state">
+                      <p class="table-paragraph-state">
+                          <i class="icon-Progress-Focused"></i>
+                          STATE
+                      </p>
+                  </td>
+                  
+                  <td data-title="Total" class="table-td-total">
+                      <p>TOTAL €</p>
+                      <p class="table-paragraph-total-unpaid">PAID €</p>
+                  </td>
+                  <td data-title="" class="table-td-more">
+                      <i class="icon-More-Vertical"></i>
+                  </td>
+              </tr>
+              <tr class="row-table">
+                <td class="table-td-checkbox">
+                    <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+                </td>
+                <td data-title="Type" class="table-td-type">                                                      
+                    <p>TRADE TYPE</p>                            
+                    <p>#CODE</p>
+                </td>
+                <td data-title="Date" class="table-td-date">DATE</td>
+                <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+                <td data-title="Location" class="table-td-location">LOCATION</td>
+                <td data-title="State" class="table-td-state">
+                    <p class="table-paragraph-state">
+                        <i class="icon-Progress-Focused"></i>
+                        STATE
+                    </p>
+                </td>
+                
+                <td data-title="Total" class="table-td-total">
+                    <p>TOTAL €</p>
+                    <p class="table-paragraph-total-unpaid">PAID €</p>
+                </td>
+                <td data-title="" class="table-td-more">
+                    <i class="icon-More-Vertical"></i>
+                </td>
+            </tr>
+            <tr class="row-table">
+              <td class="table-td-checkbox">
+                  <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+              </td>
+              <td data-title="Type" class="table-td-type">                                                      
+                  <p>TRADE TYPE</p>                            
+                  <p>#CODE</p>
+              </td>
+              <td data-title="Date" class="table-td-date">DATE</td>
+              <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+              <td data-title="Location" class="table-td-location">LOCATION</td>
+              <td data-title="State" class="table-td-state">
+                  <p class="table-paragraph-state">
+                      <i class="icon-Progress-Focused"></i>
+                      STATE
+                  </p>
+              </td>
+              
+              <td data-title="Total" class="table-td-total">
+                  <p>TOTAL €</p>
+                  <p class="table-paragraph-total-unpaid">PAID €</p>
+              </td>
+              <td data-title="" class="table-td-more">
+                  <i class="icon-More-Vertical"></i>
+              </td>
+          </tr>
+          <tr class="row-table">
+            <td class="table-td-checkbox">
+                <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+            </td>
+            <td data-title="Type" class="table-td-type">                                                      
+                <p>TRADE TYPE</p>                            
+                <p>#CODE</p>
+            </td>
+            <td data-title="Date" class="table-td-date">DATE</td>
+            <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+            <td data-title="Location" class="table-td-location">LOCATION</td>
+            <td data-title="State" class="table-td-state">
+                <p class="table-paragraph-state">
+                    <i class="icon-Progress-Focused"></i>
+                    STATE
+                </p>
+            </td>
+            
+            <td data-title="Total" class="table-td-total">
+                <p>TOTAL €</p>
+                <p class="table-paragraph-total-unpaid">PAID €</p>
+            </td>
+            <td data-title="" class="table-td-more">
+                <i class="icon-More-Vertical"></i>
+            </td>
+        </tr>
+        <tr class="row-table">
+          <td class="table-td-checkbox">
+              <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+          </td>
+          <td data-title="Type" class="table-td-type">                                                      
+              <p>TRADE TYPE</p>                            
+              <p>#CODE</p>
+          </td>
+          <td data-title="Date" class="table-td-date">DATE</td>
+          <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+          <td data-title="Location" class="table-td-location">LOCATION</td>
+          <td data-title="State" class="table-td-state">
+              <p class="table-paragraph-state">
+                  <i class="icon-Progress-Focused"></i>
+                  STATE
+              </p>
+          </td>
+          
+          <td data-title="Total" class="table-td-total">
+              <p>TOTAL €</p>
+              <p class="table-paragraph-total-unpaid">PAID €</p>
+          </td>
+          <td data-title="" class="table-td-more">
+              <i class="icon-More-Vertical"></i>
+          </td>
+      </tr>
+      <tr class="row-table">
+        <td class="table-td-checkbox">
+            <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+        </td>
+        <td data-title="Type" class="table-td-type">                                                      
+            <p>TRADE TYPE</p>                            
+            <p>#CODE</p>
+        </td>
+        <td data-title="Date" class="table-td-date">DATE</td>
+        <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+        <td data-title="Location" class="table-td-location">LOCATION</td>
+        <td data-title="State" class="table-td-state">
+            <p class="table-paragraph-state">
+                <i class="icon-Progress-Focused"></i>
+                STATE
+            </p>
+        </td>
+        
+        <td data-title="Total" class="table-td-total">
+            <p>TOTAL €</p>
+            <p class="table-paragraph-total-unpaid">PAID €</p>
+        </td>
+        <td data-title="" class="table-td-more">
+            <i class="icon-More-Vertical"></i>
+        </td>
+    </tr>
+    <tr class="row-table">
+      <td class="table-td-checkbox">
+          <input id="one" name="#" type="checkbox" class="td-checkbox" value="" />
+      </td>
+      <td data-title="Type" class="table-td-type">                                                      
+          <p>TRADE TYPE</p>                            
+          <p>#CODE</p>
+      </td>
+      <td data-title="Date" class="table-td-date">DATE</td>
+      <td data-title="Customer" class="table-td-customer">CLIENT NAME</td>
+      <td data-title="Location" class="table-td-location">LOCATION</td>
+      <td data-title="State" class="table-td-state">
+          <p class="table-paragraph-state">
+              <i class="icon-Progress-Focused"></i>
+              STATE
+          </p>
+      </td>
+      
+      <td data-title="Total" class="table-td-total">
+          <p>TOTAL €</p>
+          <p class="table-paragraph-total-unpaid">PAID €</p>
+      </td>
+      <td data-title="" class="table-td-more">
+          <i class="icon-More-Vertical"></i>
+      </td>
+  </tr>
+                    
+            
+                </tbody>
+            </table>
+    </section>
+
+    <aside class="filters">
+      <div class="customer-filter-bar">
+          <div class="customer-filter-header">
+              <div>
+                  <p class="filter-paragraph">Customers</p>
+              </div>
+              <div class="filter-buttons">
+                  <button id="customer-filter-apply" class="button-filter button-apply-filter">Apply</button>
+                  <button id="customer-filter-reset" class="button-filter button-reset-filter">Reset all</button>
+                  <button id="customer-toggle-button" class="filter-toggle button-filter">
+                      <span id="show-customer-filter" class="show-icon-button">
+                          <i class="icon-Chevron-Down"></i>
+                      </span>
+                      <span id="close-customer-filter" class="close-icon-button">
+                          <i class="icon-Chevron-Up"></i>
+                      </span>
+                  </button>
+              </div>
+          </div>
+          <div id="customer-filter">
+              <div class="add-customer-action">
+                  <p class="customer-paragraph">Customers</p>
+                  <div class="add-customer-action-buttons">
+                      <div class="customer-import-responsive">
+                          <button class="button-import-customer">
+                                      <i class="icon-Cloud-Upload"></i>
+                                      <span>Import customers</span>
+                                  </button>
+                      </div>
+                      <div class="add-button-container">
+                          <button class="add-customer-button icon-Plus-Person"><span>Add</span></button>
+                      </div>
+                      <div class="add-customer-tips-container">
+                          <span class="add-customer-tip-span">
+                                      <i class="icon-Info-Filled"></i>
+                                  <span>
+                                  <div class="customer-tip-content">
+                                      <p>
+                                          You can add customers by pressing the Add + button or by importing your clients from a CSV file
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="select-company-customer">
+                              <div class="select-customer select select-fullWidth">
+                                  <select>
+                                          <option>BUSSINESS NAME 1</option>
+                                          <option>BUSSINESS NAME 2</option>
+                                          <option>BUSSINESS NAME 3</option>
+                                </select>
+                              </div>
+                      </div>
+                  </div>
+                  <div class="alphabet" id="alphabet-container"></div>
+                  <div class="search-customer">
+                      <div class="input">
+                          <input id="test10" placeholder="Search customer" class="search icon-Search" type="text"/>
+                      </div>
+                      <div>
+                          <button>
+                                  Search
+                          </button>
+                      </div>
+                  </div>
+          </div>
+      </div>
+      <div class="company-customer-list">
+          <ul class="customer-ul-list">
+              <li class="customer-li-elem">
+                  <i class="icon-Progress-Focused"></i>
+                  <p>McDonalds</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                <p>Apple Inc.</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Google</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Microsoft</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Bolt</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>NVIDIA</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Amazon</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Meta</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Walmart</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Toyota</p>
+              </li>
+              <li class="customer-li-elem">
+                <i class="icon-Progress-Focused"></i>
+                  <p>Samsung</p>
+              </li>
+          </ul>
+      </div>
+      <div class="import-customer" id="import-customer-window">
+          <div class="import-customer-title">
+              <b>Add customers</b>
+              <i id="close-import-tip" class="icon-Close"></i>
+          </div>
+          <div class="import-customer-action">
+              <p class="import-customer-tip">You can add customers by pressing the Add + button in the corner or by importing your clients from a CSV file</p>
+              <button>
+                  <i class="icon-Cloud-Upload"></i>
+                  <span>Import customers</span>
+              </button>
+          </div>
+      </div>
+      <div class="trades-filter">
+          <div class="filter-header">
+              <div>
+                  <p class="filter-paragraph">
+                      Filter
+                  </p>
+              </div>
+              <div class="filter-buttons">
+                  <button id="action-button-apply" class="button-filter button-apply-filter">Apply</button>
+                  <button id="action-button-reset" class="button-filter button-reset-filter">Reset all</button>
+                  <button id="toggle-button" class="filter-toggle button-filter">
+                      <span id="show-trades-filter" class="show-icon-button">
+                          <i class="icon-Chevron-Down"></i>
+                      </span>
+                      <span id="close-trades-filter" class="close-icon-button">
+                          <i class="icon-Chevron-Up"></i>
+                      </span>
+                  </button>
+              </div>
+          </div>
+          <div id="trades-filter" class="filter">
+              <div class="filter-item filter-type">
+                  <div class="filter-title">
+                      <p class="filter-title-paragraph">Type</p>
+                  </div>
+                  <div class="filter-options filter-options-type">
+                      <div class="filter-element">[TYPES]</div>
+                      <div class="filter-element">RECEIPT</div>
+                  </div>
+              </div>
+              <div class="filter-item filter-date">
+                  <div class="filter-title">
+                      <p class="filter-title-paragraph">Date</p>
+                  </div>
+                  <div class="filter-options filter-options-date">
+                      <div class="picker1" data-date="#selectedDate" data-weekstart="#week_start">
+                      <input type="date" id="selectedDate" data-source=".picker1" placeholder="Start date">
+                      <p>to</p>
+                      <input type="date" id="selectedDate" data-source=".picker1" placeholder="End date">
+                  </div>
+              </div>
+              <div class="filter-item filter-total">
+                  <div class="filter-title">
+                      <p class="filter-title-paragraph">Total</p>
+                  </div>
+                  <div class="filter-options filter-options-total">                                
+                      <input id="test10" placeholder="From" class="total" type="text"/>
+                      <input id="test10" placeholder="To" class="total" type="text"/>                                
+                  </div>
+              </div>
+              <div class="filter-item filter-state">
+                  <div class="filter-title">
+                      <p class="filter-title-paragraph">State</p>
+                  </div>
+                  <div class="filter-options filter-options-state">
+                      <div class="filter-element">[STATES]</div>
+                  </div>
+              </div>
+              <div class="filter-item filter-location">
+                  <div class="filter-title">
+                      <p class="filter-title-paragraph">Location</p>
+                  </div>
+                  <div class="filter-options filter-options-location">
+                      <div class="filter-element">[LOCATIONS]</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </aside>
+    </div>
+</main>
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
